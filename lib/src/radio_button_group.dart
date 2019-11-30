@@ -50,10 +50,6 @@ class RadioButtonGroup extends StatefulWidget {
   /// Empty space surrounding the RadioButtonGroup.
   final EdgeInsetsGeometry margin;
 
-  /// Space surrounding the individual buttons in the group
-  final double buttonSpacing;
-
-
   RadioButtonGroup({
     Key key,
     @required this.labels,
@@ -67,7 +63,6 @@ class RadioButtonGroup extends StatefulWidget {
     this.itemBuilder,
     this.padding = const EdgeInsets.all(0.0),
     this.margin = const EdgeInsets.all(0.0),
-    this.buttonSpacing = 12.0
   }) : super (key: key);
 
   @override
@@ -130,9 +125,9 @@ class _RadioButtonGroupState extends State<RadioButtonGroup> {
         if(widget.orientation == GroupedButtonsOrientation.VERTICAL){
 
           content.add(Row(children: <Widget>[
-            SizedBox(width: widget.buttonSpacing),
+            SizedBox(width: 12.0),
             rb,
-            SizedBox(width: widget.buttonSpacing),
+            SizedBox(width: 12.0),
             t,
           ]));
 
@@ -140,7 +135,7 @@ class _RadioButtonGroupState extends State<RadioButtonGroup> {
 
           content.add(Column(children: <Widget>[
             rb,
-            SizedBox(width: widget.buttonSpacing),
+            SizedBox(width: 12.0),
             t,
           ]));
 
